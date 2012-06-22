@@ -9,7 +9,8 @@
 
  requires:
  - MooTools 1.4
- - Fx
+ - Options
+ - Moo3D
 
  provides: [Moo3DFx]
 
@@ -50,7 +51,7 @@ var Moo3DFx = new Class(
 		}else{
 			this.frame = this.frames;
 			this.set(this.to_list);
-			this.fireEvent('onComplete', this.element, 10);
+			this.fireEvent('complete', this.element, 10);
 			this.stop();
 		}
 	},
@@ -108,7 +109,7 @@ var Moo3DFx = new Class(
 
 	increase: function()
 	{
-		Object.each(this.points, function(point, i)
+		this.points.each(function(point, i)
 		{
 			Object.each(this.now_list[i], function(p, j){ this.points[i][j] = this.now_list[i][j]; }.bind(this));
 		}.bind(this));

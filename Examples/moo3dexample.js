@@ -29,8 +29,8 @@ window.addEvent('load', function()
 	//go through all images
 	images.each(function(image, i)
 	{
-		var image_width = image.width;
-		var image_height = image.height;
+		var image_width = image.width,
+			image_height = image.height;
 		
 		/*
 		 adding each image as a 3D point to line
@@ -61,8 +61,8 @@ window.addEvent('load', function()
 	
 	//animation set up
 	
-	var front_image = 0;
-	var back_image = points_nb - 1;
+	var front_image = 0,
+		back_image = points_nb - 1;
 	
 	//animation paths
 	var animation_path_forward =
@@ -93,7 +93,6 @@ window.addEvent('load', function()
 		//change rotation axis depending on mouse position
 		'mousemove': function(e)
 		{
-			e = new Event(e);
 			scene.options.rotationAxis.x = 0.1 + (container_coords.height / 2 - e.page.y + container_coords.top) / 800;
 			scene.options.rotationAxis.y = (0 - (container_coords.width / 2 - e.page.x + container_coords.left)) / 1000;
 			if (!animating) scene.render();
@@ -151,7 +150,7 @@ window.addEvent('load', function()
 					if (total_refresh >= total_animation_time)
 					{
 						animating = false;
-						$clear(animation);
+						clearInterval(animation);
 						
 						//update front and back images
 						if (e.wheel == 1)

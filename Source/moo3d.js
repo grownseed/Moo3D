@@ -58,12 +58,12 @@ var Moo3D = new Class(
 		//complete object's points
 		object.each(function(point)
 		{
-			if (!$defined(point.modifiers))
+			if (point.modifiers == undefined)
 				point.modifiers = {};
 			
-			if (!$defined(point.modifiers.left))
+			if (point.modifiers.left == undefined)
 				point.modifiers.left = function(){return this.projection.x;};
-			if (!$defined(point.modifiers.top))
+			if (point.modifiers.top == undefined)
 				point.modifiers.top = function(){return this.projection.y;};
 			
 			point.modifiers.position = 'absolute';
@@ -76,13 +76,12 @@ var Moo3D = new Class(
 	
 	transform3DPointsTo2DPoints: function(points)
 	{
-		var transformedPoints = [];
-		var sx = Math.sin(this.options.rotationAxis.x);
-		var cx = Math.cos(this.options.rotationAxis.x);
-		var sy = Math.sin(this.options.rotationAxis.y);
-		var cy = Math.cos(this.options.rotationAxis.y);
-		var sz = Math.sin(this.options.rotationAxis.z);
-		var cz = Math.cos(this.options.rotationAxis.z);
+		var sx = Math.sin(this.options.rotationAxis.x),
+			cx = Math.cos(this.options.rotationAxis.x),
+			sy = Math.sin(this.options.rotationAxis.y),
+			cy = Math.cos(this.options.rotationAxis.y),
+			sz = Math.sin(this.options.rotationAxis.z),
+			cz = Math.cos(this.options.rotationAxis.z);
 		
 		var x, y, z, xy, xz, yx, yz, zx, zy, scale;
 		
@@ -127,7 +126,7 @@ var Moo3D = new Class(
 	{
 		var objects;
 		
-		if ($defined(object))
+		if (object != undefined)
 			objects = [object];
 		else
 			objects = this.objects;
@@ -140,7 +139,7 @@ var Moo3D = new Class(
 			{
 				point.modifiers.each(function(value, style)
 				{
-					point.element.setStyle(style, ($type(value) == 'function' ? value.attempt([], point) : value));
+					point.element.setStyle(style, (typeof(value) == 'function' ? value.attempt([], point) : value));
 				});
 			});
 		}.bind(this));
