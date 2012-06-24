@@ -100,7 +100,6 @@ window.addEvent('load', function()
 		//trigger animation in mousewheel direction
 		'mousewheel': function(e)
 		{
-			e = new Event(e);
 			e.stop();
 			
 			if (!animating)
