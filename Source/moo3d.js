@@ -8,11 +8,11 @@ authors:
 - Hadrien Jouet
 
 requires:
-- MooTools 1.4
 - Options
 
 provides: [Moo3D]
 
+...
 */
 
 var Moo3D = new Class(

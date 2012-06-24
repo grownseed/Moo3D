@@ -8,12 +8,12 @@ authors:
 - Hadrien Jouet
 
 requires:
-- MooTools 1.4
-- Options
+- Fx
 - Moo3D
 
 provides: [Moo3DFx]
 
+...
 */
 
 var Moo3DFx = new Class(
