@@ -1,0 +1,251 @@
+* {
+	border:medium none;
+	font-weight:normal;
+	margin:0;
+	padding:0;
+}
+body {
+	background: #000 none;
+	color: #fff;
+}
+
+/* ------ */
+
+html, body, #bg, div.stars, #shad, #nebula {
+	width: 100%;
+	height: 100%;
+}
+
+/* ---------------- SCENE ----------------- */
+/* ------------ z-index 1-100 ------------- */
+
+/* ------ stars ------ */
+
+.stars {
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+#stars1 { background: url(../images/seeders/stars_back.png) repeat; }
+#stars2 { background: url(../images/seeders/stars_mid.png) repeat; }
+#stars3 { background: url(../images/seeders/stars_fore.png) repeat; }
+
+/* ------ container ------ */
+
+#container_scene {
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	margin: auto;
+	width: 80%;
+	height: 80%;
+}
+
+/* ------ hoops ------ */
+
+div.hoop {
+	position: absolute;
+	width: 100%;
+	height: 50%;
+	left: 0;
+	right: 0;
+}
+#hoop_top, #hoop_btm img {
+	top: 0;
+}
+#hoop_btm, #hoop_top img {
+	bottom: 0;
+}
+div.hoop img {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	left: 0;
+	right: 0;
+	margin: 0 auto;
+}
+div.hoop img.hoop2 {	width: 85%; height: 85%;	}
+div.hoop img.hoop3 {	width: 70%; height: 70%;	}
+div.hoop img.hoop4 {	width: 55%; height: 55%;	}
+div.hoop img.hoop5 {	width: 42%; height: 42%;	}
+div.hoop img.hoop6 {	width: 30%; height: 30%;	}
+
+#hoop_top .hoop1 { z-index: 1 }
+#hoop_top .hoop2 { z-index: 3 }
+#hoop_top .hoop3 { z-index: 5 }
+#hoop_top .hoop4 { z-index: 7 }
+#hoop_top .hoop5 { z-index: 9 }
+#hoop_top .hoop6 { z-index: 11 }
+#hoop_btm .hoop1 { z-index: 23 }
+#hoop_btm .hoop2 { z-index: 21 }
+#hoop_btm .hoop3 { z-index: 19 }
+#hoop_btm .hoop4 { z-index: 17 }
+#hoop_btm .hoop5 { z-index: 15 }
+#hoop_btm .hoop6 { z-index: 13 }
+
+/* ----- planets ----- */
+
+#planets
+{
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	width: 50%;
+	height: 50%;
+	margin: auto;
+}
+
+.planet {
+	float: left;
+	margin: 20px;
+	background: #121212 none;
+}
+.planet, .planet div {
+	width: 122px;
+	height: 122px;
+	border-radius: 999px;
+	-moz-border-radius: 999px;
+	-webkit-border-radius: 999px;
+}
+.planet:hover {
+	background: #fff none;
+}
+.planet div, .planet img {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	margin: auto;
+}
+.planet .inside {
+	width: 90%;
+	height: 90%;
+	background-repeat: repeat-x;
+	background-position: inherit;
+}
+.cool .inside {
+	background-image: url(../images/seeders/cool.png);
+}
+.shit .inside {
+	background-image: url(../images/seeders/shit.png);
+}
+
+/* ------ sun ------ */
+
+#container_scene .sun {
+	width: 138px;
+	height: 138px;
+	background: none;
+	z-index: 12;
+}
+.sun .inside {
+	width: 80%;
+	height: 80%;
+	background-image: url(../images/seeders/sun.png);
+	background-position: 0 center;
+}
+#sunflare1, #sunflare2 {
+    -webkit-animation-iteration-count: infinite;
+    -webkit-animation-timing-function: linear;
+    -webkit-animation-name: sunflare1;
+	-webkit-animation-duration: 10s;
+}
+@-webkit-keyframes sunflare1 { 
+	from { -webkit-transform: rotate(0deg) } to { -webkit-transform:rotate(360deg) }
+}
+#sunflare2 {
+    -webkit-animation-name: sunflare2;
+}
+@-webkit-keyframes sunflare2 { 
+	from { -webkit-transform: rotate(360deg) } to { -webkit-transform:rotate(0deg) }
+}
+
+/* ------ arteroid ------ */
+
+#container_scene .asteroid {
+	background: none;
+}
+.asteroid img {
+	width: 90%;
+	height: 80%;
+}
+
+/* -------------- INTERFACE --------------- */
+/* ----------- z-index 101-200 ------------ */
+
+/* ------ navigator ------ */
+
+#navigator, #navigator div {
+	position: absolute;
+	background: url(../images/seeders/navigator.png) no-repeat 0 0;
+}
+#navigator {
+	right: 0;
+	bottom: 20px;
+	width: 218px;
+	height: 171px;
+	z-index: 200;
+}
+#navigator #navigator_pad {
+	width: 172px;
+	height: 124px;
+	left: 25px;
+	top: 19px;
+	background-position: -228px 0;
+	cursor: url(../images/seeders/cursor_grab.png), move;
+}
+#navigator #navigator_pad:hover {
+	background-position: -228px -134px;
+}
+#navigator #navigator_pad:active {
+	cursor: url(../images/seeders/cursor_grabbing.png), move;
+}
+#navigator #navigator_container {
+	width: 70px;
+	height: 70px;
+	margin: auto;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	background: none;
+}
+#navigator_up, #navigator_right, #navigator_down, #navigator_left {
+	cursor: pointer;
+}
+#navigator #navigator_up {		width: 90px; height: 22px; left: 66px; top: 11px; background-position: -440px 0; 	}
+#navigator #navigator_right {	width: 19px; height: 69px; left: 183px; top: 48px; background-position: -540px 0; 	}
+#navigator #navigator_down {	width: 90px; height: 22px; left: 66px; top: 130px; background-position: -440px -47px; 	}
+#navigator #navigator_left {	width: 20px; height: 69px; left: 18px; top: 48px; background-position: -410px 0; 	}
+
+#navigator #navigator_up:hover {		background-position: -440px -79px;	}
+#navigator #navigator_right:hover {		background-position: -540px -79px;	}
+#navigator #navigator_down:hover {		background-position: -440px -126px;	}
+#navigator #navigator_left:hover {		background-position: -410px -79px;	}
+
+#navigator #navigator_up:active {		background-position: -440px -158px;	}
+#navigator #navigator_right:active {	background-position: -540px -158px;	}
+#navigator #navigator_down:active {		background-position: -440px -205px;	}
+#navigator #navigator_left:active {		background-position: -410px -158px;	}
+
+#navigator .navigator_axis {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	margin: auto;
+}
+#x.navigator_axis {
+	width: 100%;
+}
+#y.navigator_axis {
+	height: 80%;
+}
