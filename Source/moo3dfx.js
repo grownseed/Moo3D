@@ -1,15 +1,20 @@
 /*
- ---
+---
+
+script: moo3dfx.js
+
+name: Moo3DFx
+
 description: Moo3DFx - MooTools Fx based class for Moo3D
 
 license: MIT-style
 
 authors:
-- Hadrien Jouet
+  - Hadrien Jouet
 
 requires:
-- Fx
-- Moo3D
+  - Fx
+  - Moo3D
 
 provides: [Moo3DFx]
 
