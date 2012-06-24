@@ -1,20 +1,20 @@
 /*
  ---
- description: Moo3DFx - MooTools Fx based class for Moo3D
+description: Moo3DFx - MooTools Fx based class for Moo3D
 
- license: MIT-style
+license: MIT-style
 
- authors:
- - Hadrien Jouet
+authors:
+- Hadrien Jouet
 
- requires:
- - MooTools 1.4
- - Options
- - Moo3D
+requires:
+- MooTools 1.4
+- Options
+- Moo3D
 
- provides: [Moo3DFx]
+provides: [Moo3DFx]
 
- */
+*/
 
 var Moo3DFx = new Class(
 {

@@ -1,19 +1,19 @@
 /*
- ---
- description: Moo3D - A MooTools class that helps render basic 3D with JavaScript
+---
+description: Moo3D - A MooTools class that helps render basic 3D with JavaScript
 
- license: MIT-style
+license: MIT-style
 
- authors:
- - Hadrien Jouet
+authors:
+- Hadrien Jouet
 
- requires:
- - MooTools 1.4
- - Options
+requires:
+- MooTools 1.4
+- Options
 
- provides: [Moo3D]
+provides: [Moo3D]
 
- */
+*/
 
 var Moo3D = new Class(
 {
